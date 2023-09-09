@@ -1,4 +1,4 @@
-import Ipbase from "@everapi/ipbase-js/index.js";
+import Ipbase from "@everapi/ipbase-js";
 
 const header = document.getElementById("header");
 const quotation = document.getElementById("quotation");
@@ -15,14 +15,6 @@ const getLocation = async () => {
     return response.data;
   });
 };
-
-// ipBase
-//   .info({
-//     ip: "1.1.1.1",
-//   })
-//   .then((response) => {
-//     console.log(response);
-//   });
 
 // classes
 const moveUp = "translate-y-0";
