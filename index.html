@@ -64,7 +64,7 @@
       id="header"
       class="header z-50 lg:w-[calc(100%-320px)] sm:w-[calc(100%-112px)] w-[calc(100%-48px)] flex justify-between lg:items-end items-start flex-wrap gap-y-[48px] lg:flex-row flex-col absolute lg:top-14 sm:top-[153px] top-[99px] lg:left-40 sm:left-14 left-6 lg:translate-y-[45vh] sm:translate-y-[43vh] translate-y-[38vh] transition-transform duration-700"
     >
-      <header class="header__header">
+      <div class="header__header">
         <p class="message text-xl uppercase">
           Good Morning <span class="hidden sm:inline">, it's currently</span>
         </p>
@@ -90,21 +90,22 @@
         >
           in London, UK
         </h2>
-      </header>
+      </div>
 
-      <footer class="header__footer">
+      <div class="header__footer">
         <button
           id="more-btn"
           class="btn btn--more bg-white text-black sm:w-36 sm:h-14 w-[115px] h-[39px] pr-[9px] pl-[21px] rounded-[28px] flex justify-between items-center"
         >
-          <p
+          <span
             id="btn__txt"
             class="font-bold sm:text-base text-xs tracking-widest uppercase"
           >
             More
-          </p>
+          </span>
+          <!-- class="before:content-[' '] before:bg-black before:sm:w-[40px] before:sm:h-[40px] before:w-[32px] before:h-[32px] before:rounded-[100%] before:flex before:justify-center before:items-center" -->
 
-          <div
+          <span
             class="bg-black sm:w-[40px] sm:h-[40px] w-[32px] h-[32px] rounded-[100%] flex justify-center items-center"
           >
             <img
@@ -112,9 +113,9 @@
               src="./assets/desktop/icon-arrow-down.svg"
               alt=""
             />
-          </div>
+          </span>
         </button>
-      </footer>
+      </div>
     </header>
 
     <main class="main">
