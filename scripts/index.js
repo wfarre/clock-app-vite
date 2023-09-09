@@ -1,8 +1,4 @@
 import Ipbase from "@everapi/ipbase-js/index.js";
-// import dotenv from "../../node_modules/dotenv/lib/main";
-// import { require } from "../node_modules/requirejs/require.js";
-// import Ipbase from ".";
-// require("dotenv").config();
 
 const header = document.getElementById("header");
 const quotation = document.getElementById("quotation");
