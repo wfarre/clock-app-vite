@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "twcss": "npx tailwindcss -i ./public/assets/input.css -o ./public/dist/output.css --watch"
+    "twcss": "npx tailwindcss -i ./assets/input.css -o ./dist/output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3",

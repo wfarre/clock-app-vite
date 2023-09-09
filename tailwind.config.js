@@ -13,11 +13,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         "day-bg-desktop": "url('/assets/desktop/bg-image-daytime.jpg')",
-        "night-bg-desktop": "url('/assets/desktop/bg-image-nightime.jpg')",
+        "night-bg-desktop": "url('/assets/desktop/bg-image-nighttime.jpg')",
         "day-bg-tablet": "url('/assets/tablet/bg-image-daytime.jpg')",
-        "night-bg-tablet": "url('/assets/tablet/bg-image-nightime.jpg')",
+        "night-bg-tablet": "url('/assets/tablet/bg-image-nighttime.jpg')",
         "day-bg-mobile": "url('/assets/mobile/bg-image-daytime.jpg')",
-        "night-bg-mobile": "url('/assets/mobile/bg-image-nightime.jpg')",
+        "night-bg-mobile": "url('/assets/mobile/bg-image-nighttime.jpg')",
       },
     },
   },

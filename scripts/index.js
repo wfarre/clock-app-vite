@@ -6,8 +6,13 @@ const metadata = document.getElementById("metadata");
 const moreBtn = document.getElementById("more-btn");
 const moreBtnTxt = document.getElementById("btn__txt");
 const moreBtnArrow = document.getElementById("btn__arrow");
-
+const refreshQuoteBtn = document.getElementById("refresh-btn");
+const quote = document.getElementById("quote");
+const authorOfQuote = document.getElementById("author");
 const API_KEY = import.meta.env.API_KEY;
+
+const dayBg = document.getElementById("day-bg");
+const nightBg = document.getElementById("night-bg");
 
 const getLocation = async () => {
   const ipBase = new Ipbase(API_KEY);
@@ -49,24 +54,6 @@ moreBtn.addEventListener("click", () => {
   }
 });
 
-// const response = fetch("http://worldtimeapi.org/api/timezone/Europe/Paris")
-//   .then((res) => {
-//     console.log("hello");
-//     return res.json();
-//   })
-//   .then((res) => res.abbreviation)
-//   .catch((err) => err);
-
-// const loadLocationInformation = async (url) => {
-//   try {
-//     const response = await fetch(url);
-//     const locationInformation = await response.json();
-//     return locationInformation;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
 const getLocationInformation = async (url) => {
   let data = await fetch(url)
     .then((res) => {
@@ -85,28 +72,45 @@ const getLocationInformation = async (url) => {
   return data;
 };
 
-// const locationInformation = loadLocationInformation(
-//   "http://worldtimeapi.org/api/timezone/Europe/Paris"
-// );
+const getQuote = async () => {
+  const quote = await fetch("https://api.quotable.io/quotes/random")
+    .then((res) => res.json())
+    .then((data) => data[0])
+    .catch((err) => console.log(err));
 
-// let a = await loadLocationInformation(
-//   "http://worldtimeapi.org/api/timezone/Europe/Paris"
-// );
+  console.log(quote);
+  return quote;
+};
 
-// const setData = async () => {
-//   a = await loadLocationInformation(
-//     "http://worldtimeapi.org/api/timezone/Europe/Paris"
-//   );
-// };
+getQuote();
+
+const refreshQuote = async () => {
+  const quoteData = await getQuote();
+
+  console.log(quoteData);
+  const quoteContent = quoteData.content;
+  const quoteAuthor = quoteData.author;
+
+  authorOfQuote.innerHTML = quoteAuthor;
+  quote.innerHTML = quoteContent;
+};
+
+refreshQuote();
+
+refreshQuoteBtn.addEventListener("click", () => {
+  refreshQuote();
+});
 
 const displayTime = async () => {
   const currentLocation = await getLocation();
+  console.log(currentLocation);
 
   // data to display
   const timezoneCode = currentLocation.timezone.code;
   const currentTime = currentLocation.timezone.current_time;
   const city = currentLocation.location.city.name;
   const country = currentLocation.location.country.alpha2;
+  const daylight = currentLocation.timezone.is_daylight_saving;
 
   // DOM
   const time = document.getElementById("time");
@@ -125,6 +129,15 @@ const displayTime = async () => {
   time.innerHTML = hours + ":" + minutes;
   timezone.innerHTML = timezoneCode;
   location.innerHTML = "in " + city + ", " + country;
+
+  if (daylight) {
+    nightBg.classList.add("hidden");
+    dayBg.classList.remove("hidden");
+  }
+  if (!daylight) {
+    nightBg.classList.remove("hidden");
+    dayBg.classList.add("hidden");
+  }
 };
 
 displayTime();
@@ -152,8 +165,6 @@ const displayMetaData = async () => {
   dayOfTheWeekDisplay.innerHTML = dayOfTheWeek;
   dayOfTheYearDisplay.innerHTML = dayOfTheYear;
   weekNumberDisplay.innerHTML = weekNumber;
-
-  console.log(locationMetadata);
 };
 
 displayMetaData();

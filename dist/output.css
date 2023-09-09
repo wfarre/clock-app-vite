@@ -740,6 +740,10 @@ h1,
   margin-top: 0.5rem;
 }
 
+.mt-\[0\.25rem\] {
+  margin-top: 0.25rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -839,8 +843,8 @@ h1,
   display: none;
 }
 
-.h-5 {
-  height: 1.25rem;
+.h-\[17px\] {
+  height: 17px;
 }
 
 .h-\[256px\] {
@@ -863,16 +867,20 @@ h1,
   height: 100vh;
 }
 
-.w-5 {
-  width: 1.25rem;
-}
-
 .w-\[115px\] {
   width: 115px;
 }
 
+.w-\[17px\] {
+  width: 17px;
+}
+
 .w-\[32px\] {
   width: 32px;
+}
+
+.w-\[calc\(\(290\/324\)\*100\%\)\] {
+  width: calc((290 / 324) * 100%);
 }
 
 .w-\[calc\(100\%-48px\)\] {
@@ -1895,6 +1903,10 @@ h1,
   background-image: url('/assets/mobile/bg-image-daytime.jpg');
 }
 
+.bg-night-bg-mobile {
+  background-image: url('/assets/mobile/bg-image-nighttime.jpg');
+}
+
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -2541,6 +2553,10 @@ h1,
   transition-duration: 150ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .duration-500 {
   transition-duration: 500ms;
 }
@@ -2610,6 +2626,11 @@ h1,
   }
 }
 
+.hover\:rotate-180:hover {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -2657,10 +2678,6 @@ h1,
     height: 40px;
   }
 
-  .sm\:w-10\/12 {
-    width: 83.333333%;
-  }
-
   .sm\:w-36 {
     width: 9rem;
   }
@@ -2669,8 +2686,16 @@ h1,
     width: 50%;
   }
 
+  .sm\:w-\[\(573\/769\)\*100vw\] {
+    width: (573/769)*100vw;
+  }
+
   .sm\:w-\[40px\] {
     width: 40px;
+  }
+
+  .sm\:w-\[calc\(\(540\/573\)\*100\%\)\] {
+    width: calc((540 / 573) * 100%);
   }
 
   .sm\:w-\[calc\(100\%-112px\)\] {
@@ -2697,6 +2722,10 @@ h1,
 
   .sm\:bg-day-bg-tablet {
     background-image: url('/assets/tablet/bg-image-daytime.jpg');
+  }
+
+  .sm\:bg-night-bg-tablet {
+    background-image: url('/assets/tablet/bg-image-nighttime.jpg');
   }
 
   .sm\:px-14 {
@@ -2750,8 +2779,8 @@ h1,
     height: 400px;
   }
 
-  .lg\:w-7\/12 {
-    width: 58.333333%;
+  .lg\:w-\[\(573\/1440\)\*100vw\] {
+    width: (573/1440)*100vw;
   }
 
   .lg\:w-\[calc\(100\%-320px\)\] {
@@ -2782,6 +2811,10 @@ h1,
 
   .lg\:bg-day-bg-desktop {
     background-image: url('/assets/desktop/bg-image-daytime.jpg');
+  }
+
+  .lg\:bg-night-bg-desktop {
+    background-image: url('/assets/desktop/bg-image-nighttime.jpg');
   }
 
   .lg\:px-40 {
