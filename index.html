@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <title>Frontend Mentor | Clock App</title>
+  </head>
+  <body class="h-screen w-screen relative lg:px-40 sm:px-14 px-6">
+    <!-- <h1 class="text-3xl font-bold underline">Hello World</h1> -->
+    <div
+      class="h-full w-full bg-no-repeat bg-cover lg:bg-day-bg-desktop sm:bg-day-bg-tablet bg-day-bg-mobile brightness-50 absolute top-0 left-0 z-[-1]"
+    ></div>
+
+    <div
+      id="quotation"
+      class="quotation pt-14 flex gap-4 z-50 text-xs sm:text-lg lg:w-7/12 sm:w-10/12 w-full transition-all duration-500"
+    >
+      <!-- mb-56 sm:mb-96 lg:mb-40 -->
+      <div class="">
+        <p class="text mb-3">
+          “The science of operations, as derived from mathematics more
+          especially, is a science of itself, and has its own abstract truth and
+          value.”
+        </p>
+        <p class="author font-bold">Ada Lovelace</p>
+      </div>
+      <!-- <div></div> -->
+      <button class="btn btn--refresh h-5 w-5 relative">
+        <img
+          class="absolute top-0 left-0 h-5 w-5"
+          src="./assets/desktop/icon-refresh.svg"
+          alt="refresh"
+        />
+      </button>
+    </div>
+
+    <header
+      id="header"
+      class="header z-50 lg:w-[calc(100%-320px)] sm:w-[calc(100%-112px)] w-[calc(100%-48px)] flex justify-between lg:items-end items-start flex-wrap gap-y-[48px] lg:flex-row flex-col absolute lg:top-14 sm:top-[153px] top-[99px] lg:left-40 sm:left-14 left-6 lg:translate-y-[45vh] sm:translate-y-[43vh] translate-y-[38vh] transition-transform duration-700"
+    >
+      <header class="header__header">
+        <p class="message text-xl uppercase">
+          Good Morning <span class="hidden sm:inline">, it's currently</span>
+        </p>
+        <div class="flex flex-row items-baseline">
+          <h1
+            id="time"
+            class="time lg:text-[200px] sm:text-[175px] text-8xl font-bold m-0"
+          >
+            <!-- <span id="hours"> </span> : <span id="minutes"> </span> -->
+          </h1>
+          <p
+            id="timezone"
+            class="timezone text-sm sm:text-3xl lg:text-[40px] font-light leading-10"
+          >
+            BST
+          </p>
+        </div>
+
+        <h2
+          id="location"
+          class="location text-sm sm:text-lg lg:text-2xl uppercase font-bold"
+        >
+          in London, UK
+        </h2>
+      </header>
+
+      <footer class="header__footer">
+        <button
+          id="more-btn"
+          class="btn btn--more bg-white text-black sm:w-36 sm:h-14 w-[115px] h-[39px] pr-[9px] pl-[21px] rounded-[28px] flex justify-between items-center"
+        >
+          <p
+            id="btn__txt"
+            class="font-bold sm:text-base text-xs tracking-widest uppercase"
+          >
+            More
+          </p>
+
+          <div
+            class="bg-black sm:w-[40px] sm:h-[40px] w-[32px] h-[32px] rounded-[100%] flex justify-center items-center"
+          >
+            <img
+              id="btn__arrow"
+              src="./assets/desktop/icon-arrow-down.svg"
+              alt=""
+            />
+          </div>
+        </button>
+      </footer>
+    </header>
+
+    <main class="main">
+      <section
+        id="metadata"
+        class="section lg:h-[400px] h-[256px] lg:gap-y-9 gap-y-[16px] lg:gap-x-[242px] sm:gap-x-[80] z-50 lg:py-[74px] sm:py-[119px] py-12 absolute bg-whiteopacity75 w-full lg:px-40 sm:px-14 px-6 bottom-0 left-0 flex flex-col flex-wrap scale-y-0 transition-[all] origin-bottom duration-700"
+      >
+        <div
+          class="sm:flex-col flex-row flex items-center sm:items-start justify-between w-full sm:w-6/12"
+        >
+          <h3
+            class="lg:text-[15px] tracking-wider text-[10px] uppercase font-light text-grey"
+          >
+            CURRENT TIMEZONE
+          </h3>
+          <p id="current-timezone" class="lg:text-[56px] font-bold text-black">
+            Europe/London
+          </p>
+        </div>
+
+        <div
+          class="sm:flex-col flex-row flex items-center sm:items-start justify-between w-full sm:w-6/12"
+        >
+          <h3
+            class="lg:text-[15px] tracking-wider text-[10px] uppercase font-light text-grey"
+          >
+            Day of the week
+          </h3>
+          <p id="day-of-week" class="lg:text-[56px] font-bold text-black">5</p>
+        </div>
+
+        <div
+          class="sm:flex-col flex-row flex items-center sm:items-start justify-between w-full sm:w-6/12"
+        >
+          <h3
+            class="lg:text-[15px] tracking-wider text-[10px] uppercase font-light text-grey"
+          >
+            Day of the year
+          </h3>
+          <p id="day-of-year" class="lg:text-[56px] font-bold text-black">
+            295
+          </p>
+        </div>
+
+        <div
+          class="sm:flex-col flex-row flex items-center sm:items-start justify-between w-full sm:w-6/12"
+        >
+          <h3
+            class="lg:text-[15px] tracking-wider text-[10px] uppercase font-light text-grey"
+          >
+            Week number
+          </h3>
+          <p id="week-number" class="lg:text-[56px] font-bold text-black">42</p>
+        </div>
+      </section>
+    </main>
+    <!-- , it's currently in More Less Current timezone Day of the year Day of the
+    week Week number -->
+  </body>
+  <scrip÷t data-main="./scripts/index.js" src="./scripts/require.js"></script>
+  <script async type="module" src="./scripts/index.js"></script>
+</html>
